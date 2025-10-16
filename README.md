@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Adding Some Screen Shot of Application
+
+![Add Expense Section](<Screenshot 2025-10-17 045917.png>)
+![Expense List View](<Screenshot 2025-10-17 050435.png>)
+![Report View](<Screenshot 2025-10-17 050606.png>)
