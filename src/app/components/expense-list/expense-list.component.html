@@ -1,0 +1,67 @@
+<section class="expense-list">
+  <h2>📝 Your Expenses</h2>
+
+  <!-- Total Expense Summary -->
+  <p>Total Expense: ₹{{ expenses | totalAmount }}</p>
+
+  <!-- Filter Dropdown -->
+  <div class="filter">
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter" [(ngModel)]="selectedCategory">
+      <option value="">All</option>
+      <option>Food</option>
+      <option>Travel</option>
+      <option>Shopping</option>
+      <option>Bills</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <!-- Expense Table -->
+  <table *ngIf="expenses.length > 0">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Amount (₹)</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exp of expenses | categoryFilter:selectedCategory">
+        <ng-container *ngIf="editId !== exp.id; else editMode">
+          <td>{{ exp.title }}</td>
+          <td>{{ exp.amount }}</td>
+          <td>{{ exp.category }}</td>
+          <td>{{ exp.date }}</td>
+          <td>
+            <button (click)="startEdit(exp)">Edit</button>
+            <button (click)="deleteExpense(exp.id)">Delete</button>
+          </td>
+        </ng-container>
+
+        <ng-template #editMode>
+          <td><input [(ngModel)]="editTitle" /></td>
+          <td><input type="number" [(ngModel)]="editAmount" /></td>
+          <td>
+            <select [(ngModel)]="editCategory">
+              <option>Food</option>
+              <option>Travel</option>
+              <option>Shopping</option>
+              <option>Bills</option>
+              <option>Other</option>
+            </select>
+          </td>
+          <td><input type="date" [(ngModel)]="editDate" /></td>
+          <td>
+            <button (click)="saveEdit()">Save</button>
+            <button (click)="cancelEdit()">Cancel</button>
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="expenses.length === 0">No expenses added yet.</p>
+</section>

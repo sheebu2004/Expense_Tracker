@@ -1,0 +1,25 @@
+<!-- dashboard.component.html -->
+<app-header></app-header>
+
+<section class="dashboard">
+  <h2>📊 Expense Tracker Dashboard</h2>
+
+  <!-- Add Expense Form -->
+  <div id="form-section" class="form-section">
+    <app-expense-form (expenseAdded)="refreshChart()"></app-expense-form>
+  </div>
+
+  <!-- Expense List -->
+  <div id="list-section" class="list-section">
+    <app-expense-list (expenseChanged)="refreshChart()"></app-expense-list>
+  </div>
+
+  <!-- Chart Section -->
+  <div id="chart-section" class="chart-section">
+    <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [type]="pieChartType">
+    </canvas>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+/* dashboard.component.scss */
+.dashboard {
+  background-color: #FAFAFA;  /* Mild background */
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #000000;
+}
+
+.chart-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  canvas {
+    width: 640px !important;       /* Fixed width */
+    height: 500px !important;      /* Fixed height */
+    background: #c4f1ef;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+}
+.form-section,
+.list-section {
+  background: #caf4f7;
+  padding: 20px;
+  margin: 0 auto 20px auto;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
