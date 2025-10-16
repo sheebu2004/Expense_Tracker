@@ -28,6 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Adding Some Screen Shot of Application
 
-![Add Expense Section](<Screenshot 2025-10-17 045917.png>)
+![Add Expense View](<Screenshot 2025-10-17 045917.png>)
 ![Expense List View](<Screenshot 2025-10-17 050435.png>)
 ![Report View](<Screenshot 2025-10-17 050606.png>)
